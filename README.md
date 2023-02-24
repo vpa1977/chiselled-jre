@@ -23,7 +23,7 @@ The major points of difference are:
 - only minimal set of libraries is present in /usr/lib/x86_64-linux-gnu, saving 39M
 - contents of /usr/share are not present (31MB), assuming that for things like local time zone information, it is either mapped into the container, or containers run in GMT.
 
-The JRE differences itself are minimal. Chiselled image removes libawt_xawt.so and libsplashscren.so along with accessibility support.
+The JRE differences itself are minimal. Chiselled image removes libawt_xawt.so and libsplashscren.so along with accessibility support. Executables, except `java`, are removed from `jre/bin`.
 Note: chiselled docker at the moment does not provides classes.jsa (Class Data Cache) in line with Temurin JRE and it has to be generated.
 
 Below are image sizes of the deployed `acmeair` benchmark application
