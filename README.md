@@ -8,18 +8,18 @@ Read more about the repository structure and build automation in [here](<https:/
 
 ## Image characteristics
 
-This section highlights differences with `eclipse-temurin:8u352-b08-jre-jammy` image (as at the time of writing 8u362 is not yet deployed to Jammy).
+This section highlights differences with the `eclipse-temurin:8u352-b08-jre-jammy` image (as at the time of writing, 8u362 is not yet deployed to Jammy).
 
 ### Image size
 
 |Image|Tag|Uncompressed Size| Compressed Size|
 |-----|---|----| ----------------------------|
 | eclipse-temurin|8u352-b08-jre-jammy|221MB|80M|
-| ubuntu/chiselled-jre|8_edge| 123MB|46M |
+| ubuntu/chiselled-jre|8-22.04_edge| 123MB|46M |
 
 The major points of difference are:
-- /bin and /usr/bin are removed, which occupy 20MB compressed in Temurin
-- /var is removed, which occupies 7.7MB due to dpkg
+- `/bin` and `/usr/bin` are removed, which occupy 20MB (compressed) in Temurin
+- `/var` is removed, which occupies 7.7MB due to `dpkg`
 - only minimal set of libraries is present in /usr/lib/x86_64-linux-gnu, saving 39M
 - contents of /usr/share are not present (31MB), assuming that for things like local time zone information, it is either mapped into the container, or containers run in GMT.
 
@@ -38,21 +38,21 @@ Below are image sizes of the deployed `acmeair` benchmark application
 
 ### Startup time
 
-The startup times were evaluated by starting a Spring Boot standalone container repeatedly and measuring total JVM time until start of the application as per Spring Boot logs.
+The startup times were evaluated by starting a Spring Boot standalone container repeatedly and measuring the total JVM time until the start of the application as per Spring Boot logs.
 The table below shows average startup times (seconds):
 |chiselled-jre| chiselled-jre with Class Data Caching| Temurin | Temurin with Class Data Caching|
 |-----|---|----| -------------|
 |1.03 |0.99328125| 1.04615625|0.989625|
 
-Adding CDS to `acmeair` allows 5% startup improvement at expense of 6MB compressed and 20MB uncompressed image size increase.
+Adding CDS (Class Data Sharing) to `acmeair` allows a 5% startup improvement at expense of a 6MB compressed (and 20MB uncompressed) image size increase.
 
 ### Throughput tests
 
-The throughput tests were performed using Apache JMeter 5.5 on `acmeair` application using the following command: ``./apache-jmeter-5.5/bin/jmeter -n -t AcmeAir-v5.jmx -DusePureIDs=true -JHOST=localhost -JPORT=9080 -j performance.log -JTHREAD=1 -JUSER=9999 -JDURATION=120 -JRAMP=60 ;``
+The throughput tests were performed using Apache JMeter 5.5 on `acmeair` application with the following command: ``./apache-jmeter-5.5/bin/jmeter -n -t AcmeAir-v5.jmx -DusePureIDs=true -JHOST=localhost -JPORT=9080 -j performance.log -JTHREAD=1 -JUSER=9999 -JDURATION=120 -JRAMP=60 ;``
 
 The table below shows average requests per second:
 
-| WebSphere Liberty | WebSphere Liberty (chiselled) | Apache Tomcat | Apache Tomcat (chiselled) | Standalone (Temurin) | Standalone (Chiselled) |
+| WebSphere Liberty | WebSphere Liberty (chiselled) | Apache Tomcat | Apache Tomcat (chiselled) | Standalone (Temurin) | Standalone (chiselled) |
 |-------------------|-------------------------------|---------------|-------------|---------|--------|
 | 1553.7 | 1704.5 | 1687.7 | 1733.2 | 1778 | 1773.6 |
 
@@ -60,7 +60,7 @@ This test shows no significant differences in performance for OpenJDK-based test
 
 ### Conclusion
 
-Chiselled JRE image of OpenJDK 8 provides 42.5% reduction in the size of the compressed image and does not degrade throughput or startup performance.
+The chiselled JRE image of OpenJDK 8 provides a 42.5% reduction in the size of the compressed image and does not degrade throughput or startup performance.
 
 ## License
 
