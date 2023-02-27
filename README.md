@@ -8,16 +8,16 @@ Read more about the repository structure and build automation in [here](<https:/
 
 ## Image characteristics
 
-According to Jetbrains 2022 survey of [Developer Ecosystem](https://www.jetbrains.com/lp/devecosystem-2022/java/) 60% of the developers still regularily used Java 8, 59% developed applications for Apache Tomcat and 67% used Spring Boot as an alternative to an application server.
+According to JetBrains' 2022 [Java Developer Ecosystem](https://www.jetbrains.com/lp/devecosystem-2022/java/) survey, 60% of the developers still regularly used Java 8, 59% developed applications for Apache Tomcat and 67% used Spring Boot as an alternative to an application server.
 
-New Relic 2022 [Java Ecosystem report](https://newrelic.com/resources/report/2022-state-of-java-ecosystem) listed following top 3 JDK vendors:
+New Relic 2022 [Java Ecosystem report](https://newrelic.com/resources/report/2022-state-of-java-ecosystem) listed the following top JDK vendors:
  - Oracle Corporation 34.48%
  - Amazon 22.04%
- - Eclipse Adoptimum 11.48%
+ - Eclipse Adoptium 11.48%
  - Azul Zulu build of OpenJDK 16%
 
 Snyk 2021 [JVM Ecosystem](https://snyk.io/jvm-ecosystem-report-2021/) had the following breakdown:
- - Eclipse Adoptimum 44%
+ - Eclipse Adoptium 44%
  - Oracle Corporation OpenJDK 28%
  - Oracle Corporation JDK 23%
  - Azul Zulu build of OpenJDK 16%
@@ -25,14 +25,14 @@ Snyk 2021 [JVM Ecosystem](https://snyk.io/jvm-ecosystem-report-2021/) had the fo
 
 The differences in the vendor distribution could be attributed to the audience providing survey responses.
 
-The chiselled JRE container is built based on Ubuntu 22.04 version of Java 8 runtime - `8u352-b08`.
+The chiselled JRE container is built based on the Ubuntu 22.04 version of Java 8 runtime - `8u352-b08`.
 
 This section provides a comparison with readily-available JRE 8 images for Ubuntu 22.04:
  - Eclipse Adoptium: `eclipse-temurin:8u352-b08-jre-jammy`
  - Amazon: `amazoncorretto:8u352-alpine3.14-jre`
 
 Azul Zulu does not provide a JRE image: https://hub.docker.com/r/azul/zulu-openjdk and it was not evaluated.
-Oracle does not provide official image of the Java Runtime Environment 8 and it was not evaluated.
+Oracle does not provide an official image of the Java Runtime Environment 8 and it was not evaluated.
 
 ### Image size
 
@@ -51,13 +51,11 @@ The major points of difference with Temurin image are:
 
 The major points of difference with Corretto image are:
  - Corretto deploys busybox as a shell
- - Corretto does not have fontconfig/fonts libraries. This causes `Font.createFont()` to fail with `java.lang.UnsatisfiedLinkError`.
- - Corretto does not provide `glibc` libraries imported by URL proxy selector. Direct (no proxy) mode is always assumed.
+ - Corretto does not have fontconfig/fonts libraries. This causes `java.awt.Font.createFont()` to fail with `java.lang.UnsatisfiedLinkError`.
+ - Corretto does not provide `glib` libraries imported by the URL proxy selector. `java.net.ProxySelector.getDefault()` call will always return `Direct Proxy`.
 
 The JRE differences itself are minimal. Th chiselled image removes libawt_xawt.so and libsplashscren.so along with accessibility support. Executables, except `java`, are removed from `jre/bin`.
-Note: chiselled docker at the moment does not provide classes.jsa (Class Data Cache) in line with Temurin JRE and it has to be generated.
-
-
+Note: chiselled images, at the moment, do not provide classes.jsa (Class Data Cache) in line with Temurin JRE and it has to be generated.
 
 Below are image sizes of the deployed `acmeair` benchmark application
 |Image|Base Image|Uncompressed Size| Compressed Size|
@@ -84,7 +82,7 @@ Adding CDS (Class Data Sharing) to `acmeair` allows a 5% startup improvement at 
 
 ### Throughput tests
 
-The throughput tests were performed using Apache JMeter 5.5 on `acmeair` application with the following command: ``./apache-jmeter-5.5/bin/jmeter -n -t AcmeAir-v5.jmx -DusePureIDs=true -JHOST=localhost -JPORT=9080 -j performance.log -JTHREAD=1 -JUSER=9999 -JDURATION=120 -JRAMP=60 ;``
+The throughput tests were performed using Apache JMeter 5.5 on the `acmeair` application with the following command: ``./apache-jmeter-5.5/bin/jmeter -n -t AcmeAir-v5.jmx -DusePureIDs=true -JHOST=localhost -JPORT=9080 -j performance.log -JTHREAD=1 -JUSER=9999 -JDURATION=120 -JRAMP=60 ;``
 
 The table below shows average requests per second:
 
@@ -96,7 +94,7 @@ This test shows no significant differences in performance for OpenJDK-based test
 
 ### Conclusion
 
-The chiselled JRE image of OpenJDK 8 provides a 42.5% reduction in the size of the compressed image compared to Temurin and 11% larger than Amazon Corretto image.
+The chiselled JRE image of OpenJDK 8 provides a 42.5% reduction in the size of the compressed image compared to Temurin and 11% larger than the Amazon Corretto image.
 The chiselled JRE image does not degrade throughput or startup performance.
 
 ## License
