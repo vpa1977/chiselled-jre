@@ -1,0 +1,931 @@
+6ea361f4759fad002de2545e3c2ab2942247cc6dec39e7f1c7df89843a20a1b0
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:48:19.548  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 41c3e0b09cea with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:48:19.550  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:48:20.047  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:48:20.053  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:48:20.053  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:48:20.082  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:48:20.082  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 483 ms
+2023-02-27 03:48:20.146  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:48:20.147  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:48:20.147  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:48:20.153  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to 192.168.20.14:27017
+2023-02-27 03:48:20.153  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1}] to 192.168.20.14:27017
+2023-02-27 03:48:20.153  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=9100934}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:48:20.237  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:48:20.327  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:48:20.352  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:48:20.357  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 1.003 seconds (JVM running for 1.297)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:48:24.731  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 8f3c58f5893c with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:48:24.732  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:48:25.161  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:48:25.166  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:48:25.166  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:48:25.192  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:48:25.192  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 428 ms
+2023-02-27 03:48:25.247  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:48:25.248  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:48:25.248  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:48:25.252  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:3}] to 192.168.20.14:27017
+2023-02-27 03:48:25.252  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:4}] to 192.168.20.14:27017
+2023-02-27 03:48:25.252  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7435718}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:48:25.338  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:48:25.437  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:48:25.462  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:48:25.467  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.901 seconds (JVM running for 1.069)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:48:30.073  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on dcccd33fb726 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:48:30.075  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:48:30.507  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:48:30.512  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:48:30.512  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:48:30.538  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:48:30.538  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 432 ms
+2023-02-27 03:48:30.596  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:48:30.597  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:48:30.597  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:48:30.602  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:5}] to 192.168.20.14:27017
+2023-02-27 03:48:30.602  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:6}] to 192.168.20.14:27017
+2023-02-27 03:48:30.603  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8354241}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:48:30.686  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:48:30.789  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:48:30.813  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:48:30.818  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.911 seconds (JVM running for 1.081)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:48:35.412  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on cd9436cabd2e with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:48:35.413  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:48:35.832  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:48:35.837  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:48:35.837  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:48:35.867  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:48:35.867  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 428 ms
+2023-02-27 03:48:35.921  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:48:35.922  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:48:35.922  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:48:35.928  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:7}] to 192.168.20.14:27017
+2023-02-27 03:48:35.928  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:8}] to 192.168.20.14:27017
+2023-02-27 03:48:35.928  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8140670}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:48:36.013  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:48:36.123  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:48:36.147  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:48:36.151  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.894 seconds (JVM running for 1.059)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:48:40.787  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on c235cd0f6cc0 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:48:40.789  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:48:41.227  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:48:41.231  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:48:41.232  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:48:41.256  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:48:41.256  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 433 ms
+2023-02-27 03:48:41.312  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@7219ec67]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:48:41.313  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:48:41.313  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:48:41.318  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:10}] to 192.168.20.14:27017
+2023-02-27 03:48:41.318  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:9}] to 192.168.20.14:27017
+2023-02-27 03:48:41.318  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8559491}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:48:41.401  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:48:41.507  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:48:41.531  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:48:41.536  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.916 seconds (JVM running for 1.087)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:48:46.120  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 0035d91d1f31 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:48:46.122  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:48:46.537  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:48:46.542  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:48:46.542  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:48:46.568  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:48:46.568  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 413 ms
+2023-02-27 03:48:46.624  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:48:46.625  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:48:46.625  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:48:46.631  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:11}] to 192.168.20.14:27017
+2023-02-27 03:48:46.631  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:12}] to 192.168.20.14:27017
+2023-02-27 03:48:46.632  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8595142}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:48:46.714  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:48:46.835  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:48:46.858  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:48:46.863  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.909 seconds (JVM running for 1.075)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:48:51.452  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on c47cb7de9119 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:48:51.453  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:48:51.871  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:48:51.876  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:48:51.876  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:48:51.901  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:48:51.901  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 421 ms
+2023-02-27 03:48:51.963  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:48:51.964  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:48:51.965  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:48:51.971  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:13}] to 192.168.20.14:27017
+2023-02-27 03:48:51.971  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:14}] to 192.168.20.14:27017
+2023-02-27 03:48:51.971  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=9388225}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:48:52.058  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:48:52.157  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:48:52.180  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:48:52.184  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.894 seconds (JVM running for 1.066)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:48:56.792  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on c963f1f16c05 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:48:56.793  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:48:57.219  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:48:57.224  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:48:57.224  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:48:57.250  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:48:57.250  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 425 ms
+2023-02-27 03:48:57.306  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:48:57.307  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:48:57.307  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:48:57.314  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:16}] to 192.168.20.14:27017
+2023-02-27 03:48:57.314  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:15}] to 192.168.20.14:27017
+2023-02-27 03:48:57.314  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8635341}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:48:57.394  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:48:57.488  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:48:57.512  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:48:57.517  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.89 seconds (JVM running for 1.055)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:02.187  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 29010463efeb with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:02.188  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:02.588  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:02.592  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:02.592  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:02.617  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:02.617  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 402 ms
+2023-02-27 03:49:02.672  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:02.673  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:02.673  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:02.679  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:18}] to 192.168.20.14:27017
+2023-02-27 03:49:02.679  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:17}] to 192.168.20.14:27017
+2023-02-27 03:49:02.680  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=9029802}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:02.759  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:02.864  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:02.888  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:02.893  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.862 seconds (JVM running for 1.024)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:07.494  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 876062f3524a with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:07.496  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:07.932  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:07.937  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:07.937  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:07.962  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:07.962  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 432 ms
+2023-02-27 03:49:08.018  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:08.019  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:08.019  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:08.025  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:19}] to 192.168.20.14:27017
+2023-02-27 03:49:08.025  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:20}] to 192.168.20.14:27017
+2023-02-27 03:49:08.025  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7947199}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:08.111  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:08.214  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:08.238  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:08.243  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.911 seconds (JVM running for 1.076)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:12.846  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on a3d3135ebc47 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:12.848  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:13.274  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:13.279  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:13.279  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:13.306  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:13.306  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 428 ms
+2023-02-27 03:49:13.361  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:13.362  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:13.362  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:13.367  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:21}] to 192.168.20.14:27017
+2023-02-27 03:49:13.367  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:22}] to 192.168.20.14:27017
+2023-02-27 03:49:13.367  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7272757}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:13.451  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:13.553  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:13.577  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:13.582  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.9 seconds (JVM running for 1.063)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:18.176  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 692fe2a7a381 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:18.178  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:18.600  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:18.605  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:18.605  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:18.632  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:18.632  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 423 ms
+2023-02-27 03:49:18.687  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:18.688  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:18.688  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:18.695  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:24}] to 192.168.20.14:27017
+2023-02-27 03:49:18.695  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:23}] to 192.168.20.14:27017
+2023-02-27 03:49:18.695  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8645612}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:18.775  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:18.880  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:18.910  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:18.916  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.906 seconds (JVM running for 1.067)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:23.565  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on bd321322b9a8 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:23.567  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:23.984  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:23.988  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:23.989  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:24.016  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:24.016  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 421 ms
+2023-02-27 03:49:24.074  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:24.075  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:24.075  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:24.080  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:25}] to 192.168.20.14:27017
+2023-02-27 03:49:24.080  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:26}] to 192.168.20.14:27017
+2023-02-27 03:49:24.080  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=9081803}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:24.163  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:24.255  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:24.278  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:24.283  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.878 seconds (JVM running for 1.045)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:28.867  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 3489fd83212e with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:28.869  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:29.320  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:29.326  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:29.326  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:29.355  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:29.355  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 453 ms
+2023-02-27 03:49:29.409  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@7219ec67]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:29.410  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:29.410  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:29.416  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:27}] to 192.168.20.14:27017
+2023-02-27 03:49:29.416  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:28}] to 192.168.20.14:27017
+2023-02-27 03:49:29.416  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8696512}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:29.496  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:29.587  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:29.622  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:29.627  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.917 seconds (JVM running for 1.079)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:34.251  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on ebba27ba5419 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:34.252  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:34.671  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:34.675  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:34.675  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:34.700  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:34.700  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 420 ms
+2023-02-27 03:49:34.757  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:34.758  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:34.758  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:34.763  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:29}] to 192.168.20.14:27017
+2023-02-27 03:49:34.763  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:30}] to 192.168.20.14:27017
+2023-02-27 03:49:34.764  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8812982}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:34.846  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:34.940  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:34.963  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:34.967  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.881 seconds (JVM running for 1.058)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:39.555  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 45ff903cbc5d with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:39.556  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:39.976  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:39.980  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:39.981  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:40.006  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:40.006  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 422 ms
+2023-02-27 03:49:40.065  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:40.065  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:40.065  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:40.070  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:32}] to 192.168.20.14:27017
+2023-02-27 03:49:40.070  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:31}] to 192.168.20.14:27017
+2023-02-27 03:49:40.070  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7448718}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:40.159  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:40.277  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:40.300  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:40.304  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.913 seconds (JVM running for 1.082)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:44.913  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 9f8b798d1b92 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:44.915  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:45.335  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:45.341  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:45.341  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:45.367  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:45.367  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 422 ms
+2023-02-27 03:49:45.425  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:45.426  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:45.426  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:45.433  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:33}] to 192.168.20.14:27017
+2023-02-27 03:49:45.433  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:34}] to 192.168.20.14:27017
+2023-02-27 03:49:45.433  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8575531}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:45.510  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:45.611  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:45.639  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:45.646  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.899 seconds (JVM running for 1.063)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:50.264  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on c53a8ff38452 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:50.265  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:50.669  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:50.673  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:50.674  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:50.698  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:50.698  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 406 ms
+2023-02-27 03:49:50.756  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:50.757  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:50.757  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:50.763  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:36}] to 192.168.20.14:27017
+2023-02-27 03:49:50.763  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:35}] to 192.168.20.14:27017
+2023-02-27 03:49:50.763  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8420600}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:50.845  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:50.954  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:50.977  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:50.982  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.873 seconds (JVM running for 1.038)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:49:55.581  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 1f18e480dc4a with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:49:55.583  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:49:56.016  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:49:56.021  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:49:56.021  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:49:56.047  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:49:56.047  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 435 ms
+2023-02-27 03:49:56.100  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:49:56.101  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:49:56.101  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:49:56.108  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:38}] to 192.168.20.14:27017
+2023-02-27 03:49:56.108  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:37}] to 192.168.20.14:27017
+2023-02-27 03:49:56.108  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8447160}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:49:56.190  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:49:56.285  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:49:56.308  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:49:56.313  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.892 seconds (JVM running for 1.058)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:00.953  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 1395d8a642ab with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:00.955  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:01.368  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:01.372  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:01.373  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:01.396  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:01.396  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 412 ms
+2023-02-27 03:50:01.450  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:01.451  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:01.451  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:01.457  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:40}] to 192.168.20.14:27017
+2023-02-27 03:50:01.457  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:39}] to 192.168.20.14:27017
+2023-02-27 03:50:01.457  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8396050}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:01.545  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:01.650  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:01.673  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:01.678  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.884 seconds (JVM running for 1.047)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:06.333  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 3c936b014f03 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:06.335  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:06.752  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:06.757  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:06.757  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:06.783  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:06.783  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 418 ms
+2023-02-27 03:50:06.840  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:06.841  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:06.841  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:06.847  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:41}] to 192.168.20.14:27017
+2023-02-27 03:50:06.847  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:42}] to 192.168.20.14:27017
+2023-02-27 03:50:06.847  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8445151}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:06.933  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:07.042  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:07.064  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:07.069  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.897 seconds (JVM running for 1.06)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:11.670  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 8399f4ec405b with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:11.671  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:12.081  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:12.086  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:12.086  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:12.110  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:12.110  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 413 ms
+2023-02-27 03:50:12.167  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:12.167  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:12.168  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:12.172  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:44}] to 192.168.20.14:27017
+2023-02-27 03:50:12.172  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:43}] to 192.168.20.14:27017
+2023-02-27 03:50:12.172  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8741431}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:12.261  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:12.367  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:12.390  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:12.395  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.882 seconds (JVM running for 1.047)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:17.016  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on ca92f972a23f with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:17.018  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:17.443  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:17.448  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:17.448  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:17.474  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:17.474  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 422 ms
+2023-02-27 03:50:17.530  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:17.531  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:17.531  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:17.538  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:46}] to 192.168.20.14:27017
+2023-02-27 03:50:17.538  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:45}] to 192.168.20.14:27017
+2023-02-27 03:50:17.538  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8532240}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:17.620  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:17.728  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:17.750  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:17.754  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.912 seconds (JVM running for 1.077)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:22.415  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 174bd1f9229b with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:22.416  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:22.848  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:22.853  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:22.853  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:22.881  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:22.881  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 437 ms
+2023-02-27 03:50:22.940  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:22.941  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:22.941  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:22.946  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:48}] to 192.168.20.14:27017
+2023-02-27 03:50:22.946  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:47}] to 192.168.20.14:27017
+2023-02-27 03:50:22.946  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7368456}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:23.032  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:23.139  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:23.165  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:23.171  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.923 seconds (JVM running for 1.09)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:27.726  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 3f371dc22c0a with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:27.727  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:28.140  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:28.145  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:28.145  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:28.171  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:28.171  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 414 ms
+2023-02-27 03:50:28.226  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:28.226  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:28.227  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:28.233  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:50}] to 192.168.20.14:27017
+2023-02-27 03:50:28.233  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:49}] to 192.168.20.14:27017
+2023-02-27 03:50:28.233  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8459380}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:28.313  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:28.412  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:28.439  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:28.444  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.88 seconds (JVM running for 1.043)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:33.113  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on b102c3da7d95 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:33.114  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:33.522  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:33.527  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:33.527  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:33.552  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:33.552  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 410 ms
+2023-02-27 03:50:33.608  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:33.609  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:33.609  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:33.616  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:52}] to 192.168.20.14:27017
+2023-02-27 03:50:33.616  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:51}] to 192.168.20.14:27017
+2023-02-27 03:50:33.616  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8693441}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:33.693  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:33.785  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:33.810  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:33.814  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.861 seconds (JVM running for 1.027)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:38.437  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 93466ee12d9f with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:38.439  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:38.836  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:38.841  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:38.841  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:38.867  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:38.868  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 403 ms
+2023-02-27 03:50:38.922  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:38.923  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:38.923  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:38.929  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:53}] to 192.168.20.14:27017
+2023-02-27 03:50:38.929  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:54}] to 192.168.20.14:27017
+2023-02-27 03:50:38.930  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8522500}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:39.007  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:39.108  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:39.132  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:39.137  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.856 seconds (JVM running for 1.021)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:43.836  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 9a6ebde773c4 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:43.838  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:44.260  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:44.265  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:44.265  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:44.292  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:44.292  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 424 ms
+2023-02-27 03:50:44.350  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:44.351  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:44.351  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:44.358  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:56}] to 192.168.20.14:27017
+2023-02-27 03:50:44.358  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:55}] to 192.168.20.14:27017
+2023-02-27 03:50:44.358  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7840737}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:44.440  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:44.545  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:44.569  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:44.574  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.906 seconds (JVM running for 1.081)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:49.195  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on bc2d106b5336 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:49.197  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:49.625  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:49.631  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:49.631  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:49.657  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:49.657  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 431 ms
+2023-02-27 03:50:49.715  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:49.716  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:49.716  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:49.722  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:57}] to 192.168.20.14:27017
+2023-02-27 03:50:49.722  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:58}] to 192.168.20.14:27017
+2023-02-27 03:50:49.722  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8164238}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:49.802  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:49.853  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:49.916  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:49.923  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.897 seconds (JVM running for 1.067)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:54.565  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 4d8cf5a0ea4b with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:54.566  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:50:55.011  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:50:55.016  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:50:55.016  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:50:55.041  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:50:55.041  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 443 ms
+2023-02-27 03:50:55.097  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:50:55.098  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:50:55.098  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:50:55.105  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:59}] to 192.168.20.14:27017
+2023-02-27 03:50:55.105  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:60}] to 192.168.20.14:27017
+2023-02-27 03:50:55.105  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8934231}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:50:55.188  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:50:55.276  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:50:55.306  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:50:55.312  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.908 seconds (JVM running for 1.094)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:50:59.921  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on d38c9b82fe18 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:50:59.922  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:51:00.333  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:51:00.338  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:51:00.339  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:51:00.364  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:51:00.364  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 415 ms
+2023-02-27 03:51:00.419  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:51:00.420  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:51:00.420  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:51:00.425  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:62}] to 192.168.20.14:27017
+2023-02-27 03:51:00.425  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:61}] to 192.168.20.14:27017
+2023-02-27 03:51:00.425  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7962159}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:51:00.507  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:51:00.601  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:51:00.625  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:51:00.629  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.868 seconds (JVM running for 1.043)
+test
+test
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2023-02-27 03:51:05.297  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Starting AcmeAirApp v2.0.0-SNAPSHOT using Java 1.8.0_352 on 7da40afd01c3 with PID 1 (/acmeair-java-2.0.0-SNAPSHOT.jar started by root in /)
+2023-02-27 03:51:05.298  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : No active profile set, falling back to 1 default profile: "default"
+2023-02-27 03:51:05.713  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-27 03:51:05.718  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-27 03:51:05.718  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-02-27 03:51:05.744  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-27 03:51:05.744  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 419 ms
+2023-02-27 03:51:05.800  INFO 1 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.19.0-31-generic"}, "platform": "Java/Amazon.com Inc./1.8.0_352-b08"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@65d6b83b]}, clusterSettings={hosts=[192.168.20.14:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-02-27 03:51:05.801  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB Server 192.168.20.14:27017 ####
+2023-02-27 03:51:05.801  INFO 1 --- [           main] com.acmeair.mongo.ConnectionManager      : #### Mongo DB is created with DB name acmeair ####
+2023-02-27 03:51:05.807  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:63}] to 192.168.20.14:27017
+2023-02-27 03:51:05.807  INFO 1 --- [168.20.14:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:64}] to 192.168.20.14:27017
+2023-02-27 03:51:05.807  INFO 1 --- [168.20.14:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=192.168.20.14:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8261559}
+USE_FLIGHT_DATA_RELATED_CACHING environment variable is set. Enabling Caching. To disable caching, use Environment variable USE_FLIGHT_DATA_RELATED_CACHING=false
+2023-02-27 03:51:05.891  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-02-27 03:51:05.985  WARN 1 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-02-27 03:51:06.010  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-27 03:51:06.016  INFO 1 --- [           main] com.acmeair.web.AcmeAirApp               : Started AcmeAirApp in 0.88 seconds (JVM running for 1.094)
+test
+test
+mongo
+mongo
