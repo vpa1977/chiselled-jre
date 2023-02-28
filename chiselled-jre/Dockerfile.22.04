@@ -12,7 +12,7 @@ WORKDIR /opt/chisel
 RUN go generate internal/deb/version.go \
     && go build ./cmd/chisel
 
-FROM public.ecr.aws/ubuntu/ubuntu:$UBUNTU_RELEASE@sha256:234afeb5d15478d2f8066f3610211fa641c0cd9b551e4ecc64ca93a05c1df5cf AS builder
+FROM ubuntu:$UBUNTU_RELEASE AS builder
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates \
@@ -33,7 +33,9 @@ RUN mkdir -p /rootfs \
     && chisel cut --release /opt/chisel-releases --root /rootfs \
         openjdk-8-jre-headless_bins \
         media-types_data \
-        libjpeg-turbo8_libs
+        libjpeg-turbo8_libs \
+	base-files_bin \
+    && ln -s $(ls /rootfs/usr/lib/jvm/java-8-openjdk-*/jre/bin/java | sed 's/\/rootfs//') /rootfs/usr/bin/
 RUN install -d -m 0755 -o $UID -g $GID /rootfs/home/$USER \
     && echo -e "root:x:0:\n$GROUP:x:$GID:" >/rootfs/etc/group \
     && echo -e "root:x:0:0:root:/root:/noshell\n$USER:x:$UID:$GID::/home/$USER:/noshell" >/rootfs/etc/passwd
@@ -47,4 +49,4 @@ USER $UID:$GID
 COPY --from=sliced-deps /rootfs /
 # Workaround for https://github.com/moby/moby/issues/38710
 COPY --from=sliced-deps --chown=$UID:$GID /rootfs/home/$USER /home/$USER
-ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"]
+ENTRYPOINT ["/usr/bin/java"]
