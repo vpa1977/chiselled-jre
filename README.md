@@ -36,6 +36,8 @@ Oracle does not provide an official image of the Java Runtime Environment 8 and 
 
 ### Image size
 
+The image sizes are provided for the amd64 version of the images.
+
 |Image|Tag|Uncompressed Size| Compressed Size| % Compressed |
 |-----|---|----| ----------------------------| -------------|
 | eclipse-temurin|8u362-b09-jre-jammy|221MB|80M| 100% |
