@@ -90,7 +90,7 @@ Below are image sizes of the deployed `acmeair` benchmark application
 
 ### Test Environment
 
-The tests were performed using following setup:
+The tests were performed using the following setup:
 | Machine | Description |
 |---------|-------------|
 | mongodb | amd64 m1.small cloud instance (1 vCPU, 2048MB RAM, 10GB disk) |
@@ -162,23 +162,23 @@ The startup times were evaluated by starting a Spring Boot standalone container 
 ### AMD64
 |Image| Minimum (seconds) | Average (seconds) | Maximum (seconds) | Standard Error|
 |-----|-------------------|-------------------|-------------------|-------------------|
-| chiselled jre| 3.21	| 3.62	|4.40|	0.04 |
-| temurin | 3.28	| 3.66	| 3.98 |	0.04 |
-| corretto| 3.703	| 4.06 |	4.50	| 0.03 |
+| chiselled jre| 3.21   | 3.62  |4.40|  0.04 |
+| temurin | 3.28    | 3.66  | 3.98 |    0.04 |
+| corretto| 3.703   | 4.06 |    4.50    | 0.03 |
 
 The chiselled jre and temurin images have no statistical differences in the startup time and Corretto image is significantly slower, which can be explained by a different runtime.
 
 ### ARM64
 |Image| Minimum (seconds) | Average (seconds) | Maximum (seconds) | Standard Error|
 |-----|-------------------|-------------------|-------------------|-------------------|
-|chiselled jre	| 22.13	| 23.18 |	24.54	| 0.12 |
-| temurin |  22.14	| 23.12	| 24.41 |	0.13 |
+|chiselled jre  | 22.13 | 23.18 |   24.54   | 0.12 |
+| temurin |  22.14  | 23.12 | 24.41 |   0.13 |
 
 The chiselled jre and temurin images have no statistical differences in the startup time.
 
 ### Class Data Sharing
 
-The image excludes class data sharing cache. The table below show difference in startup time for the chiselled jre image:
+The image excludes class data sharing cache. The table below shows the difference in the startup time for the chiselled jre image:
 
 | Platform| No Class Data Sharing Average (Seconds) | Class Data Sharing Average (Seconds) |  % Difference |
 |---------|-----------------------------------------|--------------------------| ---|
@@ -228,13 +228,13 @@ In this test the official tomcat images were used for temurin and corretto:
 
 ### ARM64
 
-| Image | Average (requests/seconds) | Standard Error |
-| ------|----------------------------|----------------|
-| chiselled-jre | 213 | 1.15 |
-| temurin | 215 | 2.24 |
+| Image | Min(requests/second)| Average (requests/seconds) | Max(requests/second)| Standard Error |
+| ------|----------------------|------|----------------| --|
+| chiselled-jre |163| 206.17 | 225.8 | 2.09 |
+| temurin | 150.2| 207.34 | 220.4| 2.54 |
+| corretto | |   | |  |
 
-
-The data shows no statistical difference for the standalone Spring Application between chiselled jre and Temurin images, with a slightly lower performance of Corretto image.
+The data shows no statistical difference for the standalone Spring Application between chiselled jre and Temurin images, with a slightly lower performance of the Corretto image.
 
 ### Conclusion
 
