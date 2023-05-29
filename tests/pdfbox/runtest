@@ -16,8 +16,9 @@ if [ -z $M2_CACHE ]; then
     exit 1
 fi
 
+PDFBOX_REPO=https://github.com/vpa1977/pdfbox
 VERSION=3.0.0-alpha3
-APP=pdfbox-${VERSION}
+PROJECT=pdfbox
 TEST_DIR=`pwd`
 
 DOCKER_OPTS="--rm  \
@@ -25,12 +26,16 @@ DOCKER_OPTS="--rm  \
     -u app \
     -v ${M2_CACHE}:${M2_CACHE} \
     -v ${TEST_DIR}:${TEST_DIR} \
-    -w ${TEST_DIR}/${APP} "
+    -w ${TEST_DIR}/${PROJECT} "
 
-if [ ! -d ${APP} ]; then
-    curl -o ${APP}-src.zip  https://dlcdn.apache.org/pdfbox/${VERSION}/${APP}-src.zip
-    (unzip -o ${APP}-src.zip && cd ${APP} && git apply ../TestCreateSignature.patch)
+if [ ! -d ${PROJECT} ]; then
+    git clone -b ${VERSION} https://github.com/vpa1977/pdfbox
 fi
+
+git clone --branch ${VERSION} ${PDFBOX_REPO} || \
+    (cd ${PROJECT} && \
+     git checkout ${VERSION} &&
+     git reset --hard)
 
 # build and tests with chiselled jre
 docker run \
