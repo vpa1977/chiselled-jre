@@ -1,14 +1,14 @@
 # Chiselled JRE
 
 The different releases of this chiselled Ubuntu image are maintained via
-channel branches (e.g. `channels/8/edge`).
+channel branches (e.g. `channels/17/edge`).
 
 Read more about the repository structure and build automation [here](<https://github.com/ubuntu-rocks/.github/blob/main/profile/README.md#-joining-the-ubuntu-rocks-project>).
 
 
 ## Image Characteristics
 
-According to JetBrains' 2022 [Java Developer Ecosystem](https://www.jetbrains.com/lp/devecosystem-2022/java/) survey, 60% of the developers still regularly used Java 8, 59% developed applications for Apache Tomcat and 67% used Spring Boot as an alternative to an application server. We will use those application platforms for the comparison of the image characteristics.
+According to JetBrains' 2022 [Java Developer Ecosystem](https://www.jetbrains.com/lp/devecosystem-2022/java/) survey, 30% of the developers still regularly use Java 17, 59% developed applications for Apache Tomcat and 67% used Spring Boot as an alternative to an application server. We will use those application platforms for the comparison of the image characteristics.
 
 New Relic 2022 [Java Ecosystem report](https://newrelic.com/resources/report/2022-state-of-java-ecosystem) listed the following top JDK vendors:
  - Oracle Corporation 34.48%
@@ -27,26 +27,44 @@ The differences in vendor distribution could be attributed to the audience provi
 
 The cloud vendors traditionally offered `amd64`-based virtual machines, though recently they have started to provide `arm64` offerings, such as [Amazon Graviton](https://aws.amazon.com/ec2/graviton/). This image evaluation will focus on `amd64` and `arm64` platforms.
 
-The chiselled JRE container is built based on the Ubuntu 22.04 version of Java 8 runtime - `8u362-ga`.
+The chiselled JRE container is built based on the Ubuntu 22.04 version of Java 17 runtime - `17.0.7+7`. In the comparison we will consider Ubuntu
 
-This section provides a comparison with readily-available JRE 8 images from the most popular distributions:
- - Eclipse Adoptium: [`eclipse-temurin:8u362-b09-jre-jammy`](https://hub.docker.com/_/eclipse-temurin), [Dockerfile](https://github.com/adoptium/containers/blob/faa5fb7621fd9b0672b83f398d3c6ee579534015/8/jre/ubuntu/jammy/Dockerfile.releases.full)
- - Amazon: [`amazoncorretto:8u362-alpine3.14-jre`](https://hub.docker.com/_/amazoncorretto), [Dockerfile](https://github.com/corretto/corretto-docker/blob/67924db8205a880aa9508d8a364ee98915f303f8/8/jre/alpine/3.14/Dockerfile)
+This section provides a comparison with readily-available Java 17 runtime images from the most popular distributions:
+ - Eclipse Adoptium publishes multiple [Java runtime images](https://github.com/adoptium/containers/tree/main/17/jre) for Java 17.
 
-Azul Zulu does not provide a JRE image: https://hub.docker.com/r/azul/zulu-openjdk and it was not evaluated.
+    |Base| Uncompressed Size (MB)|
+    |----|------------------|
+    |alpine|170 |
+    |centos|401 |
+    |ubuntu/jammy|267 |
+    |ubuntu/focal|270 |
+    |ubi/ubi9-minimal|311|
 
-Oracle does not provide an official image of the Java Runtime Environment 8 and it was not evaluated.
+      We will evaluate Ubuntu Jammy [`eclipse-temurin:17-jre-jammy`](https://github.com/adoptium/containers/blob/main/17/jre/ubuntu/jammy/Dockerfile.releases.full) and Alpine [eclipse-temurin:17.0.7_7-jre-alpine](https://github.com/adoptium/containers/blob/main/17/jre/alpine/Dockerfile.releases.full) images.
+
+ - Amazon Corretto only publishes JDK for Java 17, but its [`slim`](https://github.com/corretto/corretto-docker/blob/main/17/slim/alpine/Dockerfile) version is size-competitive - 156MB.
+  
+ - Azul Zulu  publishes multiple [Java runtime images](https://github.com/zulu-openjdk/zulu-openjdk) for Java 17.
+ 
+    |Base| Uncompressed Size (MB)|
+    |----|------------------|
+    |alpine|195 |
+    |centos|420 |
+    |ubuntu|299 |
+    |debian|299|
+
+    Will will evaluate Ubuntu-based [azul/zulu-openjdk-ubuntu:17.0.7-17.42.19-jre-headless](https://github.com/zulu-openjdk/zulu-openjdk/blob/master/ubuntu/17.0.7-17.42.19-jre-headless/Dockerfile) and Alpine-based [azul/zulu-openjdk-alpine:17.0.7-17.42.19-jre-headless](https://github.com/zulu-openjdk/zulu-openjdk/blob/master/alpine/17.0.7-17.42.19-jre-headless/Dockerfile)
+ - [Oracle](https://github.com/oracle/docker-images/tree/main/OracleJava) only publishes JDK image.
 
 ### Image size
 
 ### AMD64
 
-|Image|Tag|Uncompressed Size| Compressed Size| % Compressed |
-|-----|---|----| ----------------------------| -------------|
-| eclipse-temurin|8u362-b09-jre-jammy|215MB|80M| 100% |
-| amazoncorretto| 8u362-alpine3.14-jre| 109M | 43M| 53.8% |
-| ubuntu/chiselled-jre|8-22.04_edge| 113MB |44M | 55% |
-
+|Tag|Uncompressed Size| Compressed Size| % Compressed |
+|---|----| ----------------------------| -------------|
+|eclipse-temurin:17-jre-jammy|
+|eclipse-temurin:17.0.7_7-jre-alpine | 
+|*chiselled | 130MB   | 44MB |
 ### ARM64
 
 |Image|Tag|Uncompressed Size| Compressed Size| % Compressed |
