@@ -27,34 +27,14 @@ The differences in vendor distribution could be attributed to the audience provi
 
 The cloud vendors traditionally offered `amd64`-based virtual machines, though recently they have started to provide `arm64` offerings, such as [Amazon Graviton](https://aws.amazon.com/ec2/graviton/). This image evaluation will focus on `amd64` and `arm64` platforms.
 
-The chiselled JRE container is built based on the Ubuntu 22.04 version of Java 17 runtime - `17.0.7+7`. In the comparison we will consider Ubuntu
+The chiselled JRE container is built based on the Ubuntu 22.04 version of Java 17 runtime - `17.0.7+7`. In
 
 This section provides a comparison with readily-available Java 17 runtime images from the most popular distributions:
- - Eclipse Adoptium publishes multiple [Java runtime images](https://github.com/adoptium/containers/tree/main/17/jre) for Java 17.
-
-    |Base| Uncompressed Size (MB)|
-    |----|------------------|
-    |alpine|170 |
-    |centos|401 |
-    |ubuntu/jammy|267 |
-    |ubuntu/focal|270 |
-    |ubi/ubi9-minimal|311|
-
-      We will evaluate Ubuntu Jammy [`eclipse-temurin:17-jre-jammy`](https://github.com/adoptium/containers/blob/main/17/jre/ubuntu/jammy/Dockerfile.releases.full) and Alpine [eclipse-temurin:17.0.7_7-jre-alpine](https://github.com/adoptium/containers/blob/main/17/jre/alpine/Dockerfile.releases.full) images.
-
- - Amazon Corretto only publishes JDK for Java 17, but its [`slim`](https://github.com/corretto/corretto-docker/blob/main/17/slim/alpine/Dockerfile) version is size-competitive - 156MB.
-  
- - Azul Zulu  publishes multiple [Java runtime images](https://github.com/zulu-openjdk/zulu-openjdk) for Java 17.
- 
-    |Base| Uncompressed Size (MB)|
-    |----|------------------|
-    |alpine|195 |
-    |centos|420 |
-    |ubuntu|299 |
-    |debian|299|
-
-    Will will evaluate Ubuntu-based [azul/zulu-openjdk-ubuntu:17.0.7-17.42.19-jre-headless](https://github.com/zulu-openjdk/zulu-openjdk/blob/master/ubuntu/17.0.7-17.42.19-jre-headless/Dockerfile) and Alpine-based [azul/zulu-openjdk-alpine:17.0.7-17.42.19-jre-headless](https://github.com/zulu-openjdk/zulu-openjdk/blob/master/alpine/17.0.7-17.42.19-jre-headless/Dockerfile)
+ - Eclipse Adoptium publishes multiple [Java runtime images](https://github.com/adoptium/containers/tree/main/17/jre) for Java 17. We will evaluate Ubuntu Jammy [`eclipse-temurin:17-jre-jammy`](https://github.com/adoptium/containers/blob/main/17/jre/ubuntu/jammy/Dockerfile.releases.full) and Alpine [eclipse-temurin:17.0.7_7-jre-alpine](https://github.com/adoptium/containers/blob/main/17/jre/alpine/Dockerfile.releases.full) images.
+ - Amazon Corretto publishes Java 17 image based on Amazon Linux 2023 [`amazoncorretto:17.0.7-al2023-headless`](https://github.com/corretto/corretto-docker/tree/main/17/headless/al2023)
+ - Azul Zulu  publishes multiple [Java runtime images](https://github.com/zulu-openjdk/zulu-openjdk) for Java 17. Will will evaluate distroless [`azul/zulu-openjdk-distroless:17.0.7-17.42.19`](https://github.com/zulu-openjdk/zulu-openjdk/tree/master/distroless/17.0.7-17.42.19).
  - [Oracle](https://github.com/oracle/docker-images/tree/main/OracleJava) only publishes JDK image.
+ - Google provides distroless [`gcr.io/distroless/java17-debian11`](https://github.com/GoogleContainerTools/distroless/tree/main/java) Java 17 image.
 
 ### Image size
 
@@ -63,7 +43,7 @@ This section provides a comparison with readily-available Java 17 runtime images
 |Tag|Uncompressed Size| Compressed Size| % Compressed |
 |---|----| ----------------------------| -------------|
 |eclipse-temurin:17-jre-jammy|
-|eclipse-temurin:17.0.7_7-jre-alpine | 
+|eclipse-temurin:17.0.7_7-jre-alpine |
 |*chiselled | 130MB   | 44MB |
 ### ARM64
 
