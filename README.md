@@ -30,7 +30,7 @@ The cloud vendors traditionally offered `amd64`-based virtual machines, though r
 The chiselled JRE container is built based on the Ubuntu 22.04 version of Java 17 runtime - `17.0.7+7`. In
 
 This section provides a comparison with readily-available Java 17 runtime images from the most popular distributions:
- - Eclipse Adoptium publishes multiple [Java runtime images](https://github.com/adoptium/containers/tree/main/17/jre) for Java 17. We will evaluate Ubuntu Jammy [`eclipse-temurin:17-jre-jammy`](https://github.com/adoptium/containers/blob/main/17/jre/ubuntu/jammy/Dockerfile.releases.full) and Alpine [eclipse-temurin:17.0.7_7-jre-alpine](https://github.com/adoptium/containers/blob/main/17/jre/alpine/Dockerfile.releases.full) images.
+ - Eclipse Adoptium publishes multiple [Java runtime images](https://github.com/adoptium/containers/tree/main/17/jre) for Java 17. We will evaluate Ubuntu Jammy [`eclipse-temurin:17.0.7_7-jre-jammy`](https://github.com/adoptium/containers/blob/main/17/jre/ubuntu/jammy/Dockerfile.releases.full) and Alpine [eclipse-temurin:17.0.7_7-jre-alpine](https://github.com/adoptium/containers/blob/main/17/jre/alpine/Dockerfile.releases.full) images.
  - Amazon Corretto publishes Java 17 image based on Amazon Linux 2023 [`amazoncorretto:17.0.7-al2023-headless`](https://github.com/corretto/corretto-docker/tree/main/17/headless/al2023)
  - Azul Zulu  publishes multiple [Java runtime images](https://github.com/zulu-openjdk/zulu-openjdk) for Java 17. Will will evaluate distroless [`azul/zulu-openjdk-distroless:17.0.7-17.42.19`](https://github.com/zulu-openjdk/zulu-openjdk/tree/master/distroless/17.0.7-17.42.19).
  - [Oracle](https://github.com/oracle/docker-images/tree/main/OracleJava) only publishes JDK image.
@@ -45,6 +45,7 @@ This section provides a comparison with readily-available Java 17 runtime images
 |eclipse-temurin:17-jre-jammy|
 |eclipse-temurin:17.0.7_7-jre-alpine |
 |*chiselled | 130MB   | 44MB |
+
 ### ARM64
 
 |Image|Tag|Uncompressed Size| Compressed Size| % Compressed |
