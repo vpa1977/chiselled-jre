@@ -30,7 +30,7 @@ The cloud vendors traditionally offered `amd64`-based virtual machines, though r
 The chiselled JRE container is built based on the Ubuntu 22.04 version of Java 17 runtime - `17.0.7+7`. In
 
 This section provides a comparison with readily-available Java 17 runtime images from the most popular distributions:
- - Eclipse Adoptium publishes multiple [Java runtime images](https://github.com/adoptium/containers/tree/main/17/jre) for Java 17. We will evaluate Ubuntu Jammy [`eclipse-temurin:17.0.7_7-jre-jammy`](https://github.com/adoptium/containers/blob/main/17/jre/ubuntu/jammy/Dockerfile.releases.full) and Alpine-based [eclipse-temurin:17.0.7_7-jre-alpine](https://github.com/adoptium/containers/blob/main/17/jre/alpine/Dockerfile.releases.full) images.
+ - Eclipse Adoptium publishes multiple [Java runtime images](https://github.com/adoptium/containers/tree/main/17/jre) for Java 17. We will evaluate Ubuntu Jammy [`eclipse-temurin:17.0.7_7-jre-jammy`](https://github.com/adoptium/containers/blob/main/17/jre/ubuntu/jammy/Dockerfile.releases.full) and Alpine-based [`eclipse-temurin:17.0.7_7-jre-alpine`](https://github.com/adoptium/containers/blob/main/17/jre/alpine/Dockerfile.releases.full) images.
  - Amazon Corretto publishes Java 17 image based on Amazon Linux 2023 [`amazoncorretto:17.0.7-al2023-headless`](https://github.com/corretto/corretto-docker/tree/main/17/headless/al2023)
  - Azul Zulu  publishes multiple [Java runtime images](https://github.com/zulu-openjdk/zulu-openjdk) for Java 17. Will will evaluate distroless [`azul/zulu-openjdk-distroless:17.0.7-17.42.19`](https://github.com/zulu-openjdk/zulu-openjdk/tree/master/distroless/17.0.7-17.42.19).
  - [Oracle](https://github.com/oracle/docker-images/tree/main/OracleJava) only publishes JDK image.
@@ -38,11 +38,25 @@ This section provides a comparison with readily-available Java 17 runtime images
 
 ### Image size
 
+The evaluted images are built using the different processes and this affects the resulting image size.
+
+Eclipse Temurin images use `ubuntu:22.04` or `alpine:3.18` base images and extract Adoptium's build of Java 17 Runtime built with OpenJDK `legacy-jre-image` target. It contains hotspot binaries and a base list of modules required for the runtime and generated from the JDK image with the `jlink` tool. It includes class data sharing cache.
+
+Azul Zulu packages a limited set of binaries and a full set of JDK modules. It includes class data sharing cache. It only installs base dependencies (`libc` and `libnss`) and none of the Abstract Window Toolkit (AWT) such as fontconfig despite having AWT binaries present in the Java runtime.
+
+Amazon Corretto installs Java JDK package in `amazonlinux:2023` with all package dependencies. It packages a limited set of binaries and a full set of JDK modules.
+
+Google distroless image is built by installing Debian openjdk-17-jre-headless package and its dependencies and copying them into a scratch container. It contains a limited set of binaries and a full set of JDK modules.
+
+Java 17 in chiselled Ubuntu is built by running `jlink` with a base list of modules required for the runtime in a normal Ubuntu 22.04 Jammy container. The dependencies are chiselled and copied into a scratch container along with the generated Java runtime.
+
+As shown in the tables below the best space efficiency is achieved by Java 17 in chiselled Ubuntu with both approaches combined. `jlink` provides best space saving and it is further augmented by having only Java library dependencies in the resulting image.
+
 ### AMD64
 
 |Tag|Uncompressed Size(MB)| Compressed Size (MB)| % Compressed |
 |---|----| ----------------------------| -------------|
-|eclipse-temurin:17.0.7_7-jre-jammy	259|	89	|100|
+|eclipse-temurin:17.0.7_7-jre-jammy	|259|	89	|100|
 |eclipse-temurin:17.0.7_7-jre-alpine	|156	|55	|61.79|
 |amazoncorretto:17.0.7-al2023-headless	|356|	127	|142.69|
 |azul/zulu-openjdk-distroless:17.0.7-17.42.19| 	185|	63|	70.78|
@@ -52,20 +66,19 @@ This section provides a comparison with readily-available Java 17 runtime images
 
 ### ARM64
 
-|Image|Tag|Uncompressed Size (MB)| Compressed Size(MB)| % Compressed |
+|Tag|Uncompressed Size (MB)| Compressed Size(MB)| % Compressed |
 |-----|---|----| ----------------------------| -------------|
 |eclipse-temurin:17-jre-jammy|	254|	87	|100|
 |gcr.io/distroless/java17-debian11|	218|	80	|91.9540229885057|
 |ubuntu/chiselled-jre:17_edge|	121|	42	|48.2758620689655|
 
-[ Point of differences sections pending reviews ]
 
 Below are image sizes of the deployed `acmeair` benchmark application
 
 #### `acmeair` as a standalone Spring Boot application
 
 ### AMD64
-|Base Image|Uncompressed Size| Compressed Size| % Compressed |
+|Tag|Uncompressed Size| Compressed Size| % Compressed |
 |---|----| ----------------------------|----|
 |standalone-eclipse-temurin:17.0.7_7-jre-jammy|	282|	109|	100|
 |standalone-eclipse-temurin:17.0.7_7-jre-alpine|	179|	76|	69.72|
@@ -76,7 +89,7 @@ Below are image sizes of the deployed `acmeair` benchmark application
 
 
 ### ARM64
-|Base Image|Uncompressed Size| Compressed Size| % Compressed |
+|Tag|Uncompressed Size| Compressed Size| % Compressed |
 |---|----| ----------------------------|----|
 |standalone-eclipse-temurin:17.0.7_7-jre-jammy|	277	|108|	100|
 |standalone-gcr.io/distroless/java17-debian11|	241	|101|	93.51|
