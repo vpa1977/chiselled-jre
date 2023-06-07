@@ -30,7 +30,7 @@ The cloud vendors traditionally offered `amd64`-based virtual machines, though r
 The chiselled JRE container is built based on the Ubuntu 22.04 version of Java 17 runtime - `17.0.7+7`. In
 
 This section provides a comparison with readily-available Java 17 runtime images from the most popular distributions:
- - Eclipse Adoptium publishes multiple [Java runtime images](https://github.com/adoptium/containers/tree/main/17/jre) for Java 17. We will evaluate Ubuntu Jammy [`eclipse-temurin:17.0.7_7-jre-jammy`](https://github.com/adoptium/containers/blob/main/17/jre/ubuntu/jammy/Dockerfile.releases.full) and Alpine [eclipse-temurin:17.0.7_7-jre-alpine](https://github.com/adoptium/containers/blob/main/17/jre/alpine/Dockerfile.releases.full) images.
+ - Eclipse Adoptium publishes multiple [Java runtime images](https://github.com/adoptium/containers/tree/main/17/jre) for Java 17. We will evaluate Ubuntu Jammy [`eclipse-temurin:17.0.7_7-jre-jammy`](https://github.com/adoptium/containers/blob/main/17/jre/ubuntu/jammy/Dockerfile.releases.full) and Alpine-based [eclipse-temurin:17.0.7_7-jre-alpine](https://github.com/adoptium/containers/blob/main/17/jre/alpine/Dockerfile.releases.full) images.
  - Amazon Corretto publishes Java 17 image based on Amazon Linux 2023 [`amazoncorretto:17.0.7-al2023-headless`](https://github.com/corretto/corretto-docker/tree/main/17/headless/al2023)
  - Azul Zulu  publishes multiple [Java runtime images](https://github.com/zulu-openjdk/zulu-openjdk) for Java 17. Will will evaluate distroless [`azul/zulu-openjdk-distroless:17.0.7-17.42.19`](https://github.com/zulu-openjdk/zulu-openjdk/tree/master/distroless/17.0.7-17.42.19).
  - [Oracle](https://github.com/oracle/docker-images/tree/main/OracleJava) only publishes JDK image.
@@ -40,35 +40,25 @@ This section provides a comparison with readily-available Java 17 runtime images
 
 ### AMD64
 
-|Tag|Uncompressed Size| Compressed Size| % Compressed |
+|Tag|Uncompressed Size(MB)| Compressed Size (MB)| % Compressed |
 |---|----| ----------------------------| -------------|
-|eclipse-temurin:17-jre-jammy|
-|eclipse-temurin:17.0.7_7-jre-alpine |
-|*chiselled | 130MB   | 44MB |
+|eclipse-temurin:17.0.7_7-jre-jammy	259|	89	|100|
+|eclipse-temurin:17.0.7_7-jre-alpine	|156	|55	|61.79|
+|amazoncorretto:17.0.7-al2023-headless	|356|	127	|142.69|
+|azul/zulu-openjdk-distroless:17.0.7-17.42.19| 	185|	63|	70.78|
+|gcr.io/distroless/java17-debian11	|223|	82|	92.13|
+|ubuntu/chiselled-jre:17_edge|	125|	44|	49.43|
+
 
 ### ARM64
 
-|Image|Tag|Uncompressed Size| Compressed Size| % Compressed |
+|Image|Tag|Uncompressed Size (MB)| Compressed Size(MB)| % Compressed |
 |-----|---|----| ----------------------------| -------------|
-| eclipse-temurin|8u362-b09-jre-jammy|205MB|77M| 100% |
-| amazoncorretto| 8u362-alpine3.14-jre| n/a | n/a| n/a |
-| ubuntu/chiselled-jre|8-22.04_edge| 109MB |42M | 55% |
+|eclipse-temurin:17-jre-jammy|	254|	87	|100|
+|gcr.io/distroless/java17-debian11|	218|	80	|91.9540229885057|
+|ubuntu/chiselled-jre:17_edge|	121|	42	|48.2758620689655|
 
-
-The points of difference with the Temurin image are:
-- `/bin` and `/usr/bin` are removed, which occupy 20MB (compressed) in Temurin
-- `/var` is removed, which occupies 7.7MB due to `dpkg`
-- only a minimal set of libraries is present in /usr/lib/x86_64-linux-gnu, saving 39M
-- contents of /usr/share are not present (31MB), meaning that container always assumes GMT timezone.
-- `glib` libraries imported by the URL proxy selector are absent. `java.net.ProxySelector.getDefault()` call will always return `Direct Proxy`.
-
-The points of difference with the Amazon Corretto image are:
- - Corretto deploys busybox as a shell
- - Corretto does not have fontconfig/fonts libraries. This causes `java.awt.Font.createFont()` to fail with `java.lang.UnsatisfiedLinkError`. Removing font support will bring the chiselled JRE size on par with the Corretto image.
- - No JRE is provided for ARM64, there is only JDK build
-
-The JRE differences themselves are minimal. The chiselled image removes `libawt_xawt.so` and `libsplashscren.so` along with accessibility support. Only 'java' executable is left in `jre/bin`.
-Note: chiselled images, at the moment, do not provide classes.jsa (Class Data Cache) in line with Temurin JRE.
+[ Point of differences sections pending reviews ]
 
 Below are image sizes of the deployed `acmeair` benchmark application
 
@@ -77,15 +67,20 @@ Below are image sizes of the deployed `acmeair` benchmark application
 ### AMD64
 |Base Image|Uncompressed Size| Compressed Size| % Compressed |
 |---|----| ----------------------------|----|
-| eclipse-temurin:8u362-b08-jre-jammy | 237MB | 99MB |  100% |
-| ubuntu/chiselled-jre:8_edge | 135MB | 63MB| 64% |
-| amazoncorretto:8u362-alpine3.14-jre | 131MB | 62MB| 63% |
+|standalone-eclipse-temurin:17.0.7_7-jre-jammy|	282|	109|	100|
+|standalone-eclipse-temurin:17.0.7_7-jre-alpine|	179|	76|	69.72|
+|standalone-amazoncorretto:17.0.7-al2023-headless|	379	|147	|134.86|
+|standalone-azul/zulu-openjdk-distroless:17.0.7-17.42.19|	208|	83|	76.14|
+|standalone-gcr.io/distroless/java17-debian11	|246|	102|	93.57|
+|standalone-ubuntu/chiselled-jre:17_edge	|147|	65	|59.63|
+
 
 ### ARM64
 |Base Image|Uncompressed Size| Compressed Size| % Compressed |
 |---|----| ----------------------------|----|
-| eclipse-temurin:8u362-b08-jre-jammy | 227MB | 96MB |  100% |
-| ubuntu/chiselled-jre:8_edge | 131MB | 62MB| 65% |
+|standalone-eclipse-temurin:17.0.7_7-jre-jammy|	277	|108|	100|
+|standalone-gcr.io/distroless/java17-debian11|	241	|101|	93.51|
+|standalone-ubuntu/chiselled-jre:17_edge|143| 63|58.33|
 
 
 ### Test Environment
@@ -95,7 +90,7 @@ The tests were performed using the following setup:
 |---------|-------------|
 | mongodb | amd64 m1.small cloud instance (1 vCPU, 2048MB RAM, 10GB disk) |
 | acmeair amd| amd64 m1.medium cloud instance (2 vCPUs, 4096MB RAM, 10GB disk) |
-| acmeair arm| arm64 m1.small cloud instance (1 vCPU, 2048MB RAM, 10GB disk) |
+| acmeair arm| arm64 m1.medium cloud instance (2 vCPU, 2048MB RAM, 10GB disk) |
 | load machine| amd64 m1.medium cloud instance (2 vCPUs, 4096MB RAM, 10GB disk) |
 
 [load machine] <-http-> [acmeair] <--> [mongodb]
@@ -162,31 +157,23 @@ The startup times were evaluated by starting a Spring Boot standalone container 
 ### AMD64
 |Image| Minimum (seconds) | Average (seconds) | Maximum (seconds) | Standard Error|
 |-----|-------------------|-------------------|-------------------|-------------------|
-| chiselled jre| 3.21   | 3.62  |4.40|  0.04 |
-| temurin | 3.28    | 3.66  | 3.98 |    0.04 |
-| corretto| 3.703   | 4.06 |    4.50    | 0.03 |
+|standalone-eclipse-temurin:17.0.7_7-jre-jammy|2.98|3.35|3.72|0.04|
+|standalone-eclipse-temurin:17.0.7_7-jre-alpine|3.25|3.66|4.09|0.05|
+|standalone-amazoncorretto:17.0.7-al2023-headless|2.97|3.35|3.82|0.04|
+|standalone-azul/zulu-openjdk-distroless:17.0.7-17.42.19 |3.17|3.55|3.96|0.04|
+|standalone-gcr.io/distroless/java17-debian11|2.80|3.37|3.68|0.04|
+|standalone-ubuntu/chiselled-jre:17_edge|2.93|3.36|3.75|0.03|
 
-The chiselled jre and temurin images have no statistical differences in the startup time and Corretto image is significantly slower, which can be explained by a different runtime.
+The chiselled jre and temurin images have no statistical differences in the startup time.
 
 ### ARM64
 |Image| Minimum (seconds) | Average (seconds) | Maximum (seconds) | Standard Error|
 |-----|-------------------|-------------------|-------------------|-------------------|
-|chiselled jre  | 22.13 | 23.18 |   24.54   | 0.12 |
-| temurin |  22.14  | 23.12 | 24.41 |   0.13 |
+|standalone-eclipse-temurin:17.0.7_7-jre-jammy|10.92|11.82|12.75|0.09|
+|standalone-gcr.io/distroless/java17-debian11|10.85|11.68|13.37|0.13|
+|standalone-ubuntu/chiselled-jre:17_edge|11.14|11.97|13.51|0.09|
 
 The chiselled jre and temurin images have no statistical differences in the startup time.
-
-### Class Data Sharing
-
-The image excludes class data sharing cache. The table below shows the difference in the startup time for the chiselled jre image:
-
-| Platform| No Class Data Sharing Average (Seconds) | Class Data Sharing Average (Seconds) |  % Difference |
-|---------|-----------------------------------------|--------------------------| ---|
-| AMD64   | 3.62                                    | 3.51|                    | 3% |
-| ARM64   | 23.18                                   | 23.14 |                  | 0% |
-
-
-Adding Class Data Sharing to `acmeair` allows a 3% startup improvement at expense of a 6MB compressed (and 20MB uncompressed) image size increase.
 
 ### Throughput tests
 
@@ -198,47 +185,55 @@ The throughput tests were performed using Apache JMeter 5.5 on the `acmeair` app
 
 | Image | Min(requests/second)| Average (requests/seconds) | Max(requests/second)| Standard Error |
 | ------|----------------------|------|----------------| --|
-| chiselled-jre |348.2| 364.18 |376.3| 1.15 |
-| temurin |345.9| 363.23 |384.8 | 1.55 |
-| corretto |336.9| 361.05 | 380.9| 1.71 |
+|standalone-eclipse-temurin:17.0.7_7-jre-jammy|394.80|413.23|438.70|2.10|
+|standalone-eclipse-temurin:17.0.7_7-jre-alpine|374.00|421.81|450.00|3.24|
+|standalone-amazoncorretto:17.0.7-al2023-headless|413.20|422.91|434.30|1.03|
+|standalone-azul/zulu-openjdk-distroless:17.0.7-17.42.19 |393.80|409.33|425.80|1.64|
+|standalone-gcr.io/distroless/java17-debian11|413.90|424.52|438.40|1.29|
+|standalone-ubuntu/chiselled-jre:17_edge|410.90|418.38|430.10|0.93|
 
 ### ARM64
 
 | Image | Min(requests/second)| Average (requests/seconds) | Max(requests/second)| Standard Error |
 | ------|----------------------|------|----------------| --|
-| chiselled-jre |180.9| 213 |221.8| 1.15 |
-| temurin | 170.1| 215 | 230.5| 2.24 |
+|standalone-eclipse-temurin:17.0.7_7-jre-jammy|138.10|163.10|170.70|1.48|
+|standalone-gcr.io/distroless/java17-debian11|141.40|165.35|172.00|1.09|
+|standalone-ubuntu/chiselled-jre:17_edge|136.10|163.68|172.50|1.24|
 
 
 The data shows no statistical difference for the standalone Spring Application.
 
 ## `acmeair` on Apache Tomcat
 
-In this test the official tomcat images were used for temurin and corretto:
- - `tomcat:9.0.72-jre8-temurin-jammy`
- - `tomcat:9.0.72-jdk8-corretto-al2`
+In this test the official tomcat images were used for temurin:
+ - `tomcat:10.1.9-jre17-temurin-jammy`
+
+Other images were built by compiling Apache Tomcat 10.1.9 with native extensions and copying it into the source container
 
 ### AMD64
 
 | Image | Min(requests/second)| Average (requests/seconds) | Max(requests/second)| Standard Error |
 | ------|----------------------|------|----------------| --|
-| chiselled-jre |338.7| 362.18 | 377.7| 1.54 |
-| temurin | 349.8| 365.77 | 377.8| 1.13 |
-| corretto |336.2| 348.05 |373.9| 1.82 |
+|tomcat:10.1.9-jre17-temurin-jammy|383.30|403.51|416.70|1.27|
+|tomcat-eclipse-temurin:17.0.7_7-jre-alpine|387.50|395.27|405.70|0.91|
+|tomcat-amazoncorretto:17.0.7-al2023-headless|368.00|401.13|410.80|1.54|
+|tomcat-azul/zulu-openjdk-distroless:17.0.7-17.42.19 |375.50|401.53|412.80|1.44|
+|tomcat-gcr.io/distroless/java17-debian11|397.30|408.76|421.60|1.10|
+|tomcat-ubuntu/chiselled-jre:17_edge|384.10|402.82|415.90|1.53|
 
 ### ARM64
 
 | Image | Min(requests/second)| Average (requests/seconds) | Max(requests/second)| Standard Error |
 | ------|----------------------|------|----------------| --|
-| chiselled-jre |163| 206.17 | 225.8 | 2.09 |
-| temurin | 150.2| 207.34 | 220.4| 2.54 |
-| corretto |147.2 |191.60   |205 | 2.11  |
+|tomcat:10.1.9-jre17-temurin-jammy|136.80|165.68|174.20|1.58|
+|tomcat-gcr.io/distroless/java17-debian11|130.00|157.62|168.40|1.76|
+|tomcat-ubuntu/chiselled-jre:17_edge|138.50|157.71|166.70|1.42|
 
 The data shows no statistical difference for the standalone Spring Application between chiselled jre and Temurin images, with a slightly lower performance of the Corretto image.
 
 ### Conclusion
 
-The chiselled JRE image of OpenJDK 8 provides a 45% reduction in the size of the compressed image compared to Temurin and 1.2% larger than the Amazon Corretto image.
+The chiselled JRE image of OpenJDK 8 provides a ~51% reduction in the size of the compressed image compared to Temurin Java 17 runtime image.
 The chiselled JRE image does not degrade throughput or startup performance compared to the evaluated images.
 
 ## License
