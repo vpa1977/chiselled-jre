@@ -67,7 +67,7 @@ As shown in the tables below the best space efficiency is achieved by Java 17 in
 ### ARM64
 
 |Tag|Uncompressed Size (MB)| Compressed Size(MB)| % Compressed |
-|-----|---|----| ----------------------------| -------------|
+|-----|----| ----------------------------| -------------|
 |eclipse-temurin:17-jre-jammy|	254|	87	|100|
 |gcr.io/distroless/java17-debian11|	218|	80	|91.9540229885057|
 |ubuntu/chiselled-jre:17_edge|	121|	42	|48.2758620689655|
