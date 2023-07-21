@@ -29,8 +29,6 @@ COPY --from=builder /usr/lib/jvm/default-java/bin/javac \
 COPY --from=builder /usr/lib/jvm/default-java/lib/ct.sym \
     /opt/java/lib/
 # additional jars
-COPY --from=builder /usr/lib/jvm/default-java/lib/*.jar \
-    /opt/java/lib/
 
 # copy modules
 COPY --from=builder /usr/lib/jvm/default-java/lib/modules \
