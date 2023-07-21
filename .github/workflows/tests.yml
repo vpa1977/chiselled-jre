@@ -8,7 +8,7 @@ env:
   image-name: ubuntu/jre:test
   build-image-name: temurin-jdk17-builder:test
   maven-image-name: temurin-jdk17-maven:test
-  maven-image-base: maven:3.9.1-eclipse-temurin-17
+  maven-image-base: debian:bookworm
 
 jobs:
   build:
@@ -75,6 +75,8 @@ jobs:
           -t ${{ env.maven-image-name }} \
           --build-arg UID=$(id -u ${USER}) \
           --build-arg GID=$(id -g ${USER}) \
+          --build-arg BASE_IMAGE=${{ env.image-name }} \
+          --build-arg MAVEN_IMAGE=${{ env.maven-image-base }} \
           -f tests/containers/maven/Dockerfile.${{ matrix.ubuntu-release }} \
           tests/containers/maven
 
