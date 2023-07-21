@@ -1,19 +1,17 @@
 ARG MAVEN_IMAGE
-ARG UBUNTU_RELEASE=22.04
 ARG USER=app
 ARG UID=101
 ARG GROUP=app
 ARG GID=101
 
 FROM golang:1.20 AS chisel
-ARG UBUNTU_RELEASE
-RUN git clone --depth 1 -b ubuntu-22.04 https://github.com/canonical/chisel-releases /opt/chisel-releases \
-    && git clone --depth 1 -b main https://github.com/canonical/chisel /opt/chisel
+RUN git clone  --depth 1 -b debian-bookworm https://github.com/vpa1977/chisel-releases /opt/chisel-releases \
+    && git clone --depth 1 -b debian-support https://github.com/vpa1977/chisel /opt/chisel
 WORKDIR /opt/chisel
 RUN go generate internal/deb/version.go \
     && go build ./cmd/chisel
 
-FROM public.ecr.aws/ubuntu/ubuntu:$UBUNTU_RELEASE@sha256:2c1168b31e636c7ab22598bfaefa6de63d1806a908d0c39bd402277881356fab AS builder
+FROM bookworm AS builder
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates \
