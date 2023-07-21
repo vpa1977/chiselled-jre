@@ -75,8 +75,6 @@ jobs:
           -t ${{ env.maven-image-name }} \
           --build-arg UID=$(id -u ${USER}) \
           --build-arg GID=$(id -g ${USER}) \
-          --build-arg BASE_IMAGE=${{ env.image-name }} \
-          --build-arg MAVEN_IMAGE=${{ env.maven-image-base }} \
           -f tests/containers/maven/Dockerfile.${{ matrix.ubuntu-release }} \
           tests/containers/maven
 
